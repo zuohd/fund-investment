@@ -2,8 +2,8 @@ import datetime
 
 
 class FundRecord:
-    def __int__(self, ):
-        self.invest_amount = 396
+    def __init__(self, invest_amount=396):
+        self.invest_amount = invest_amount
         self.create_data = datetime.date.today()
         self.fund_name = '中证红利'
         self.fund_code = '10032'
@@ -15,14 +15,12 @@ class FundRecord:
     def calculate_reference_amount(self, index_temperature):
         if index_temperature <= 10:
             self.reference_amount = self.invest_amount
-        if index_temperature <= 20:
+        elif index_temperature <= 20:
             self.reference_amount = self.invest_amount * 0.8
-        if index_temperature <= 25:
+        elif index_temperature <= 25:
             self.reference_amount = self.invest_amount * 0.6
-        if index_temperature <= 30:
+        elif index_temperature <= 30:
             self.reference_amount = self.invest_amount * 0.5
-        if index_temperature <= 40:
-            self.reference_amount = 0
 
     def calculate_month_amount(self):
         if self.index_temperature <= 10:
