@@ -3,11 +3,19 @@ import datetime
 
 class FundRecord:
     def __init__(self, invest_amount=396):
+        # 定投金额
         self.invest_amount = invest_amount
         self.create_data = datetime.date.today()
+
+        # 基金名称
         self.fund_name = '中证红利'
+
+        # 基金代码
         self.fund_code = '10032'
+
+        # 指数温度
         self.index_temperature = 0
+
         self.left_amount = 0
         self.reference_amount = 0
         self.month_amount = 0
